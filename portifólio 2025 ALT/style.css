@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Container Principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+/* Seção de Projetos */
+.projeto {
+    background-color: #fff;
+    margin-bottom: 30px; /* Espaço entre os projetos (um abaixo do outro) */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    /* Configuração para o layout interno do projeto: imagem e texto lado a lado */
+    display: flex; 
+    align-items: center; /* Alinha verticalmente ao centro */
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores, mas a intenção principal é manter lado a lado */
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Imagem do Projeto */
+.projeto img {
+    max-width: 350px; /* Largura máxima da imagem */
+    height: auto;
+    margin-right: 25px; /* Espaço entre a imagem e o texto (lado a lado) */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* Garante que a imagem não encolha demais */
+}
+
+/* Informações do Projeto */
+.projeto-info {
+    flex: 1; /* Permite que essa seção ocupe o espaço restante */
+    min-width: 250px; /* Largura mínima para garantir que o texto tenha espaço */
+}
+
+.projeto-info h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.8em;
+}
+
+.projeto-info p {
+    margin-bottom: 15px;
+}
+
+.projeto-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.projeto-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Media Query para telas menores: empilha imagem e texto */
+@media (max-width: 768px) {
+    .projeto {
+        flex-direction: column; /* Em telas menores, empilha imagem e texto */
+        text-align: center; /* Centraliza o texto quando empilhado */
+    }
+
+    .projeto img {
+        margin-right: 0; /* Remove margem direita quando empilhado */
+        margin-bottom: 20px; /* Adiciona margem inferior para separar da imagem */
+        max-width: 100%; /* Imagem ocupa a largura total em telas menores */
+    }
+    
+    .projeto-info {
+        min-width: auto; /* Remove a largura mínima para o texto em telas menores */
+    }
+}
